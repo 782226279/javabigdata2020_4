@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!-- 配置自动扫描的包 -->
+    <context:component-scan base-package="com.controller" />
+    <!--启用MVC注解功能，否则不能访问spring控制器(Controller) -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+
+    <!--能够访问静态静态,(因为spring过滤器是拦截 / 所有的要求)如果不加，所有的静态资源都会经过spring的处理，这个时候静态资源不能访问了 -->
+    <mvc:resources location="/images/" mapping="/images/**" />
+    <mvc:resources location="/img/" mapping="/img/**" />
+    <mvc:resources location="/css/" mapping="/css/**" />
+    <mvc:resources location="/js/" mapping="/js/**" />
+    <mvc:resources location="/fonts/" mapping="/fonts/**" />
+
+    <!-- 配置视图解析器 如何把handler 方法返回值解析为实际的物理视图 -->
+    <!-- Controller处理结束后需要跳转到结果页面，类似于Struts2的action处理结束后需要根据result跳转一样 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          id="internalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="/jsp/" />
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+
+    <!--文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
+
+</beans>

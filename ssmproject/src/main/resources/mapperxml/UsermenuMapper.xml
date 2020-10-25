@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UsermenuMapper">
+  <resultMap id="BaseResultMap" type="com.domain.Usermenu">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="menuname" jdbcType="VARCHAR" property="menuname" />
+    <result column="menuhref" jdbcType="VARCHAR" property="menuhref" />
+    <result column="menutop" jdbcType="INTEGER" property="menutop" />
+    <result column="menubz" jdbcType="VARCHAR" property="menubz" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, menuname, menuhref, menutop, menubz
+  </sql>
+
+</mapper>

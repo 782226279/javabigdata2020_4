@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ProjectbiddingMapper">
+    <resultMap id="BaseResultMap" type="com.domain.Projectbidding">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="owner" jdbcType="INTEGER" property="owner"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="body" jdbcType="VARCHAR" property="body"/>
+        <result column="releasetime" jdbcType="VARCHAR" property="releasetime"/>
+        <result column="endtime" jdbcType="VARCHAR" property="endtime"/>
+        <result column="ontime" jdbcType="VARCHAR" property="ontime"/>
+        <result column="money" jdbcType="INTEGER" property="money"/>
+        <result column="bz" jdbcType="VARCHAR" property="bz"/>
+        <result column="bidwinner" jdbcType="INTEGER" property="bidwinner"/>
+        <collection property="projectbiddingfileList" ofType="com.domain.Projectbiddingfile" javaType="list">
+            <id column="bid" jdbcType="INTEGER" property="id"/>
+            <result column="filepath" jdbcType="INTEGER" property="filepath"/>
+        </collection>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `owner`, title, body, releasetime, endtime, ontime, money, bz, bidwinner
+    </sql>
+
+    <select id="selectAll2" resultMap="BaseResultMap">
+        select a.id, a.owner, a.title, a.body, a.releasetime, a.endtime, a.ontime, a.money, a.bz, a.bidwinner,b.id
+        bid,b.filepath from projectbidding a inner join projectbiddingfile b on a.id=b.projectbiddingid
+        <where>
+            <if test="projectbidding.owner!=null and projectbidding.owner!=''">a.owner =#{projectbidding.owner}</if>
+            <if test="projectbidding.bz!=null and projectbidding.bz!=''">AND a.bz = #{projectbidding.bz}</if>
+            <if test="projectbidding.id!=null and projectbidding.id!=''">AND a.id = #{projectbidding.id}</if>
+        </where>
+    </select>
+
+
+
+    <select id="selectAll3" resultMap="BaseResultMap">
+        select * from projectbidding where bz=#{projectbidding.bz} and ontime &lt;=now()
+    </select>
+
+</mapper>

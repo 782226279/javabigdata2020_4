@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UsersMapper">
+    <resultMap id="BaseResultMap" type="com.domain.Users">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="worknum" jdbcType="VARCHAR" property="worknum"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="userpwd" jdbcType="VARCHAR" property="userpwd"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, worknum, username, userpwd, `name`
+    </sql>
+
+    <select id="selectByWorknameOrUsername" resultType="com.domain.Users">
+        select * from users where (worknum=#{users.worknum} and userpwd=#{users.userpwd}) or (username=#{users.username}
+        and userpwd=#{users.userpwd})
+    </select>
+
+
+    <resultMap id="selectUsersMenuresultMap" type="com.domain.Usermenu">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="menuname" jdbcType="VARCHAR" property="menuname"/>
+        <result column="menuhref" jdbcType="VARCHAR" property="menuhref"/>
+        <result column="menutop" jdbcType="INTEGER" property="menutop"/>
+        <result column="menubz" jdbcType="VARCHAR" property="menubz"/>
+        <collection property="usermenuList" javaType="list" ofType="com.domain.Usermenu">
+            <id column="id1" jdbcType="INTEGER" property="id"/>
+            <result column="menuname1" jdbcType="VARCHAR" property="menuname"/>
+            <result column="menuhref1" jdbcType="VARCHAR" property="menuhref"/>
+            <result column="menutop1" jdbcType="INTEGER" property="menutop"/>
+            <result column="menubz1" jdbcType="VARCHAR" property="menubz"/>
+        </collection>
+
+    </resultMap>
+    <!--根据用户的id，获取的用户的菜单权限树-->
+    <select id="selectUsersMenu" resultMap="selectUsersMenuresultMap">
+        select one.id,one.menuname,one.menuhref,one.menutop,one.menubz, two.id id1,two.menuname menuname1,two.menuhref
+        menuhref1,two.menutop menutop1,two.menubz menubz1 from (select
+        DISTINCT(c.id),c.menuname,c.menuhref,c.menutop,c.menubz from usersmidrole a inner join
+        rolemidusermenu b on a.roleid=b.roleid inner join usermenu c on b.usermenuid=c.id where a.usersid=#{user.id} and
+        menutop is null) one inner join
+        (select DISTINCT(c.id),c.menuname,c.menuhref,c.menutop,c.menubz from usersmidrole a inner join rolemidusermenu b
+        on a.roleid=b.roleid inner join usermenu c on b.usermenuid=c.id where a.usersid=#{user.id} and menutop is not
+        null) two on one.id=two.menutop
+    </select>
+
+
+</mapper>

@@ -1,0 +1,287 @@
+/*body全局样式*/
+body{font-size: 12px;color: #737373 ;background: #F3F3F4;}
+.marAndPadd{margin: 0px;padding: 0px;}
+.myAbq{text-decoration:none;color:#555555;}/*通用a标签样式*/
+.tyls{color: #28A4C9;}/*通用蓝色字体*/
+/*覆盖的默认bootstrap样式*/
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1172px !important;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #54A4D7;
+	border-color: #54A4D7;
+}
+.table-hover>tbody>tr:hover {
+	background-color: #D6E8F8;
+}
+
+/*顶层导航条*/
+
+#kefuAndjianyi div {
+	height: 25px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 25px;
+	text-align: center;
+}
+
+#loginAndRegister a:hover {
+	color: #B92C28;
+	text-decoration: none;
+}
+
+#loginAndRegister a:active {
+	color: #265A88;
+	text-decoration: none;
+}
+
+
+/*中间导航条*/
+
+#mydaohang a {
+	height: 30px;
+}
+
+
+/*导航*/
+
+.dhzt {
+	background: #52A6D6;
+	color: white;
+}
+
+#mydaohang2 {
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #D2EDFE;
+}
+
+#mydaohang2 a {
+	font-weight: 700;
+	font-size: 14px;
+}
+
+#mydaohang2 a li {
+	list-style: none;
+	text-decoration: none;
+	height: 100%;
+	width: 100%;
+}
+
+#mydaohang2 div {
+	margin: 0px;
+	padding: 0px;
+}
+
+#mydaohang2 a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+#mydaohang2 a li:hover {
+	background: #52A6D6;
+}
+
+
+/*幻灯片*/
+
+#huandengpian {
+	height: 166px;
+	margin-top: 10px;
+}
+
+.xttz {
+	width: 250px;
+	height: 166px;
+	border: 1px solid #52A6D5;
+	margin: 0px;
+	padding: 0px;
+	line-height: 30px;
+	font-size: 15px;
+	color: white;
+}
+
+.xttznl {
+	color: #737373;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+/*首页主体内容*/
+
+#mybody1,
+#mybody2 {
+	height: 222px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#zbxmgg {
+	height: 40px;
+	font-weight: bold;
+	color: #52A6D6;
+	line-height: 40px;
+	font-size: 15px;
+}
+
+#zbgs {
+	height: 40px;
+	font-weight: bold;
+	color: #52A6D6;
+	line-height: 40px;
+	font-size: 15px;
+}
+
+#fbgs {
+	height: 40px;
+	font-weight: bold;
+	color: #52A6D6;
+	line-height: 40px;
+	font-size: 15px;
+}
+
+#mybody11,
+#mybody21 {
+	margin: 0px;
+	padding: 0px;
+	height: 30px;
+}
+
+#mybody12,
+#mybody22 {
+	margin: 0px;
+	padding: 0px;
+	line-height: 40px;
+	text-align: center;
+}
+
+#mybody11 .col-xs-4,
+#mybody21 .col-xs-4 {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+#mybody11 .col-xs-6,
+#mybody21 .col-xs-6 {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+#mybody11 a,
+#mybody21 a {
+	color: #777777;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#mybody11 a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+#mybody21 a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+#mybody11 a li,
+#mybody21 a li {
+	list-style: none;
+	height: 100%;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #54A4D7;
+}
+
+
+/*招标状态*/
+.zbzt {
+	border-right: 0px;
+	background: #52A6D6;
+	color: white;
+}
+
+#mybody11 a li:hover {
+	background: #54A4D7;
+	color: white;
+}
+
+#mybody21 a li:hover {
+	background: #54A4D7;
+	color: white;
+}
+
+#mybody12 a,
+#mybody22 a {
+	color: #737373;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#mybody12 a:hover {
+	color: #B92C28;
+}
+
+#mybody22 a:hover {
+	color: #B92C28;
+}
+
+#mybody1 .col-xs-10,
+#mybody2 .col-xs-10{
+	line-height: 30px;
+	border-bottom: 1px dotted #777777;
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#mybody1 .col-xs-2,
+#mybody2 .col-xs-2 {
+	line-height: 30px;
+}
+
+#mybody1 .col-xs-10 i,
+#mybody2 .col-xs-10 i {
+	color: #52A6D5;
+}
+
+#mybody1 .col-xs-10 a,
+#mybody2 .col-xs-10 a {
+	color: #737373;
+	font-weight: 550;
+}
+
+#mybody1 .col-xs-10 a:hover {
+	color: #52A6D5;
+}
+
+#mybody2 .col-xs-10 a:hover {
+	color: #52A6D5;
+}
+/*采购分类*/
+.cgfl11 li{list-style: none;background:#222222 ;}
+.xxwzfl{border:1px solid #52A6D5;width:98px ;text-align: center;margin-bottom:8px ;}
+.cgfl12{font-size: 20px;color:#54A4D7 ;border-bottom:1px dotted; font-weight: bold;}
+.cgfl13{width: 290px;margin:0px ;padding: 8px 0px;}
+#mycgtj .col-xs-5 li{background:#52A6D5;}
+#mycgtj .col-xs-5 li a{color: white;}
+#mycgtj .col-xs-5 li a:hover{text-decoration:none ;color: black;}
+.xxlb{width:880px ; margin:0px ;padding:8px 20px 5px 30px;line-height:30px ;font-size:14px ;}
+/*招标查询结果*/
+.zbcxjg01{height: 40px;line-height: 40px;font-size: 16px;color: #003391;}
+.zbcxjg02 table tr td a{text-decoration:none ;color: #737373;}
+.zbcxjg02 table tr td a:hover{text-decoration:none ;}
+.zbcxjg02 span{color:#A94442 ;}
+.zbcxjg22{height: 30px;background: #52A6D5;line-height: 30px;color: white;font-size: 14px;font-weight: bold;}
+.zbcxjg011{height: 40px;line-height: 40px;font-size: 12px;color: #003391;}

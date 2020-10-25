@@ -1,0 +1,53 @@
+.commonli{
+	list-style: none; float: left;
+}
+.commonul{
+	margin: 0px; padding: 0px;
+}
+.m1{
+	width: 60px;font-size: 14px;
+}
+
+body{
+	margin: 0px;background: #dde4ee;
+}
+{
+	border: 1px solid;
+}
+.maintop{
+	height: 50px;background-color: #214c90;color: #FFFFFF;
+}
+.mainleft{
+	width: 150px; position: absolute;;left: 0px;top: 58px;bottom: 0px;
+}
+.mainright{
+	
+	position: absolute;left: 158px;top: 58px;right: 0px; bottom: 0px;
+}
+.commonli{
+	list-style: none; float: left;
+}
+.commonul{
+	margin: 0px; padding: 0px;
+}
+.m1{
+	width: 60px;font-size: 14px;
+}
+.menuul{
+	padding-top: 30px;padding-left: 150px;
+}
+.topmenu{
+	background-color: #214c90;color: #FFFFFF;height: 30px;line-height: 30px; font-size: 13px;padding-left: 10px;
+}
+.li2{
+	height: 30px;line-height: 30px; color: #214c90;font-size: 13px;
+}
+.li2 a{
+	display: block;color: #214c90 ;text-decoration: none;padding-left: 20px;
+}
+.li2 a:hover{
+	background-color: #FFFFFF;position: relative;width: 150px;
+}
+.mainleftul{
+	margin-left: 8px;
+}
